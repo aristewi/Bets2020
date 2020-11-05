@@ -15,7 +15,14 @@ import businessLogic.BLFacadeImplementation;
 
 public class ApplicationLauncher { 
 	
-	
+	private static BLFacade appFacadeInterface;
+	public BLFacade getBusinessLogic() {
+		return appFacadeInterface;
+	}
+
+	public void setBussinessLogic(BLFacade afi) {
+		appFacadeInterface = afi;
+	}
 	
 	public static void main(String[] args) {
 
@@ -33,7 +40,8 @@ public class ApplicationLauncher {
 
 		try {
 			
-			BLFacade appFacadeInterface;
+			//BLFacade appFacadeInterface;
+			
 //			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel");
 //			UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
