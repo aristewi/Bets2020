@@ -1,0 +1,28 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-10-11 16:05:08 #1 store] 
+Database '/Users/amaiaaristegui/eclipse-workspace/is2/Bets01_2021/src/main/resources/bets.temp' has been recovered (tr. 984-995)
+
+[2020-10-11 16:05:08 #2 store] 
+Database '/Users/amaiaaristegui/eclipse-workspace/is2/Bets01_2021/src/main/resources/bets.temp' is opened by 1183@MBP-de-Amaia
+
+[2020-10-11 16:05:09 #3 type] 
+Type domain.Question is not enhanced.
+
+[2020-10-11 16:05:09 #4 type] 
+Type domain.Event is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-10-11 16:09:43 #1 store] 
+Database '/Users/amaiaaristegui/eclipse-workspace/is2/Bets01_2021/src/main/resources/bets.temp' has been recovered (tr. 996-1007)
+
+[2020-10-11 16:09:43 #2 store] 
+Database '/Users/amaiaaristegui/eclipse-workspace/is2/Bets01_2021/src/main/resources/bets.temp' is opened by 1234@MBP-de-Amaia
+
+[2020-10-11 16:09:43 #3 type] 
+Type domain.Question is not enhanced.
+
+[2020-10-11 16:09:43 #4 type] 
+Type domain.Event is not enhanced.
+
