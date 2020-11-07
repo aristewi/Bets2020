@@ -19,8 +19,10 @@ import javax.persistence.TypedQuery;
 
 import configuration.ConfigXML;
 import configuration.UtilDate;
+import domain.Bet;
 import domain.Event;
 import domain.Question;
+import domain.User;
 import exceptions.QuestionAlreadyExist;
 
 public class DataAccess  {
@@ -117,6 +119,33 @@ public class DataAccess  {
 				
 			}
 			
+			User user = new User ("Amaia", "383838", "7272727A", "Aristewi");
+			
+			Bet apuesta1= new Bet(year, user, q1,ev1);
+			Bet apuesta2= new Bet(year, user, q2,ev14);
+			Bet apuesta3= new Bet(year, user, q3,ev20);
+			Bet apuesta4= new Bet(year, user, q4,ev18);
+			Bet apuesta5= new Bet(year, user, q5,ev7);
+			Bet apuesta6= new Bet(year, user, q6,ev9);
+			
+			
+			user.anadirApuesta(apuesta1);
+			user.anadirApuesta(apuesta2);
+			user.anadirApuesta(apuesta3);
+			user.anadirApuesta(apuesta4);
+			user.anadirApuesta(apuesta5);
+			user.anadirApuesta(apuesta6);
+
+
+			db.persist(user);
+			
+			db.persist(apuesta1);
+			db.persist(apuesta2);
+			db.persist(apuesta3);
+			db.persist(apuesta4);
+			db.persist(apuesta5);
+			db.persist(apuesta6);
+
 			
 			db.persist(q1);
 			db.persist(q2);
@@ -259,5 +288,9 @@ public boolean existQuestion(Event event, String question) {
 		db.close();
 		System.out.println("DataBase closed");
 	}
-	
+	public User getUser(String userName) {
+		System.out.println(">> DataAccess: getUser");
+		User usuario =db.find(User.class, userName);
+	 	return usuario;
+	}
 }

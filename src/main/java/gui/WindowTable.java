@@ -10,21 +10,26 @@ import javax.swing.table.TableModel;
 
 import domain.User;
 
-public class WindowTable extends JFrame{
-	
+public class WindowTable extends JFrame {
+
 	private User user;
 	private JTable tabla;
-	
-	public WindowTable (User user) {
-		super("Apuestas realizadas por  " + user.getNombreUsuario()+ ":");
-		this.setBounds(100,100,700,200);
-		this.user=user;
-		UserAdapter adapt= new UserAdapter(user);
+	private String[] head = { "Event", "Question", "Event Date", " Bet (€)" };
+
+	public WindowTable(User user) {
+		super("Apuestas realizadas por  " + user.getNombreUsuario() + ":");
+		this.setBounds(100, 100, 700, 200);
+		this.user = user;
+		UserAdapter adapt = new UserAdapter(user);
 		tabla = new JTable((TableModel) adapt);
-		tabla.setPreferredScrollableViewportSize(new Dimension(500,70));
-		//Creamos un JscrollPane y le agregamos la Jtable
+		tabla.setPreferredScrollableViewportSize(new Dimension(500, 70));
+		// Creamos un JscrollPane y le agregamos la Jtable
 		JScrollPane scrollPane = new JScrollPane(tabla);
-		//Agregamos el JScrollPane al contenedor
+		for(int i =0; i<head.length;i++) {
+			tabla.getTableHeader().getColumnModel().getColumn(i).setHeaderValue(head[i]);
+			repaint();
+		}
+		// Agregamos el JScrollPane al contenedor
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
 	}
 }

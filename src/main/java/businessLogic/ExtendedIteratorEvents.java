@@ -3,30 +3,44 @@ package businessLogic;
 import domain.Event;
 
 public class ExtendedIteratorEvents implements ExtendedIterator<Event>{
-
+	Object[] list;
+	private int size;
+	
 	@Override
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
-		return false;
+		 if (size < list.length-1)
+	            return true;
+	        else
+	            return false;
 	}
 
 	@Override
 	public Event next() {
-		// TODO Auto-generated method stub
-		return null;
+		 if (this.hasNext()) {
+	        	size++;
+	            return (Event) list[size];
+	        }else {
+	            return null;
+	        }
 	}
 
 	@Override
 	public Event previous() {
-		// TODO Auto-generated method stub
-		return null;
+		 if (this.hasprevious()) {
+	        	size--;
+	            return (Event) list[size];
+	        } else {
+	            return null;
+	        }
 	}
 
 	@Override
 	public boolean hasprevious() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		 if (size > 0)
+	            return true;
+	        else
+	            return false;
+		 }
 
 	@Override
 	public void goFirst() {
@@ -36,7 +50,7 @@ public class ExtendedIteratorEvents implements ExtendedIterator<Event>{
 
 	@Override
 	public void goLast() {
-		// TODO Auto-generated method stub
+		size=list.length;
 		
 	}
 
