@@ -14,6 +14,7 @@ import javax.jws.WebService;
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
 import domain.Question;
+import domain.User;
 import domain.Event;
 import exceptions.EventFinished;
 import exceptions.QuestionAlreadyExist;
@@ -135,6 +136,16 @@ public class BLFacadeImplementation implements BLFacade {
 		dbManager.open(false);
 		dbManager.initializeDB();
 		dbManager.close();
+	}
+	/**
+	 * This is the method to get the user
+	 */
+	@WebMethod
+	public User getUser(String userName) {
+		dbManager.open(false);
+		User  user=dbManager.getUser(userName);
+		dbManager.close();
+		return user;
 	}
 
 }
